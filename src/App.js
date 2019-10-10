@@ -20,6 +20,10 @@ class App extends React.Component {
 
   componentWillMount() {
     const { setCurrentUser, collectionsArray } = this.props;
+    /* This is basically implements observable pattern. The thing is we declared an unsubscribe function because
+       Firebase is a live database by using this function unsubscribe we will mount at first to get information of the user
+       Then we will create a document if the user still doesn't exist in our firebase after
+       Basically this whole block of componentWillMount is the Next part in the observable pattern*/
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -37,6 +41,8 @@ class App extends React.Component {
     });
   }
   componentWillUnmount() {
+    /* This function call only states that we need to destroy the subscription we have from the firestore live database
+      Since we have already get our user validated/aunthenticated/saved from fire store(if new user)*/
     this.unsubscribeFromAuth();
   }
   render() {
