@@ -8,6 +8,7 @@ import MenuItem from '../menu-item/menu-item.component';
 
 import '../directory-item/directory-item.styles.scss';
 
+//Created a directory component wherein the 5 category are shown.
 const Directory = ({ sections }) => (
   <div className='directory-menu'>
     {sections.map(({ id, ...otherSectionProps }) => (

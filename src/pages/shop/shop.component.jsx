@@ -17,17 +17,20 @@ import CollectionPage from '../collection/collection.component';
 const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
+
+// Created a shop page class component since the data is coming from firebase we need to store the state of the loading(Spinner);
+// If the promise of the firebase data was already been loaded.
 class ShopPage extends React.Component {
   state = {
     loading: true
   };
 
   unsubscribeFromSnapshot = null;
-
   componentDidMount() {
     const { updateCollections } = this.props;
+    //Pointing to the collection named collections in the firebase
     const collectionRef = firestore.collection('collections');
-
+    //Here we are getting the snapshot and the map out data using the utility function that we have written on the firebase utils.
     collectionRef.get().then(snapshot => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
       updateCollections(collectionsMap);

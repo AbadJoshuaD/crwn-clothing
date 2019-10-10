@@ -5,6 +5,7 @@ import CollectionPreview from '../collection-preview/collection-preview.componen
 import '../collections-overview/collections-overview.styles.scss'
 import {selectCollectionsForPreview} from '../../redux/shop/shop.selectors'
 
+//Created a collection overview component to map out all of the four categories on the shop
 const CollectionsOverview = ({collections}) => (
     <div className='collections-overview'>
      {collections.map(({id,...otherCollectionProps})=>(

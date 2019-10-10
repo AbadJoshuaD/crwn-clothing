@@ -10,8 +10,10 @@ import {createStructuredSelector} from 'reselect'
 import {selectCartHidden} from '../../redux/cart/cart.selectors'
 import {selectCurrentUser} from '../../redux/user/user.selectors'
 
+//Created a header component for the application
 const Header = ({currentUser,hidden}) => (
     <div className="header">
+        {/*This part was basically the routing part of the app */}
         <Link to='/'>
         <Logo className="logo"></Logo>
         </Link>
@@ -22,6 +24,7 @@ const Header = ({currentUser,hidden}) => (
         CONTACT
         </Link>
         {
+            // This part of the program checks if there is currently a user and then conditionally render links 
             currentUser ?
             <div className="option" onClick = {() => auth.signOut()}>SIGN OUT</div>
             :
@@ -34,6 +37,7 @@ const Header = ({currentUser,hidden}) => (
     
     </div>
 )
+//Getting access to the props of these following in order to do conditional output on the header component 
 const mapStateToProps = createStructuredSelector({
     currentUser:selectCurrentUser,
     hidden:selectCartHidden

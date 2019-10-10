@@ -57,6 +57,8 @@ export const addCollectionAndDocuments = async (
     return await batch.commit();
 };
 
+// This was the utility method that will allow us to get the snapshopt from firebase and map it out to our app
+// making consumable for our components formatting to its designated data structure.
 export const convertCollectionsSnapshotToMap = collections => {
     const transformedCollection = collections.docs.map(doc => {
         const { title, items } = doc.data();

@@ -6,6 +6,7 @@ import {selectCartItems,selectCartTotal} from '../../redux/cart/cart.selectors'
 import CheckoutItem from '../../components/checkout-item/checkout-item'
 import StripeCheckOutButton from '../../components/stripe-button/strip-button.component'
 
+//Created the checkout page where in we can see all the cart items that we added to cart
 const CheckoutPage = ({cartItems,total}) =>(
     <div className="checkout-page">
         <div className="checkout-header">
