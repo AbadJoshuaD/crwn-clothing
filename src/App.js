@@ -12,14 +12,13 @@ import { setCurrentUser } from './redux/user/user.actions'
 import { createStructuredSelector } from 'reselect'
 import { selectCurrentUser } from './redux/user/user.selectors'
 import { selectCollectionsForPreview } from './redux/shop/shop.selectors'
-import { addCollectionAndDocuments } from './firebase/firebase.utils'
 
 class App extends React.Component {
 
   unsubscribeFromAuth = null;
 
   componentWillMount() {
-    const { setCurrentUser, collectionsArray } = this.props;
+    const { setCurrentUser } = this.props;
     /* This is basically implements observable pattern. The thing is we declared an unsubscribe function because
        Firebase is a live database by using this function unsubscribe we will mount at first to get information of the user
        Then we will create a document if the user still doesn't exist in our firebase after

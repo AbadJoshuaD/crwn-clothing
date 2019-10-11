@@ -49,8 +49,6 @@ class SignUp extends React.Component{
             <div className="sign-up">
                 <h2 className="title">I do not have an account</h2>
                 <span>Sign up with your email and password</span>
-                //This is sign in form wherein we are tapped to the value to dynamically change the state of the form inputs
-                //Also we are tap in to the onChange that will fire an handleChange event
                 <form action="" className="sign-up-form" onSubmit={this.handleSubmit}>
                     <FormInput type="text" name='displayName' value={displayName} onChange={this.handleChange} label='Display Name' required></FormInput>
                     <FormInput type="email" name='email' value={email} onChange={this.handleChange} label='Email' required></FormInput>
