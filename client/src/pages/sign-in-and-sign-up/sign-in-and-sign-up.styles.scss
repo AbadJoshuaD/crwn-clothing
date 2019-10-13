@@ -3,4 +3,13 @@
     display: flex;
     justify-content: space-between;
     margin: 30px auto;
+    @media screen and (max-width: 900px) {
+        display: grid;
+        grid-template-rows: 0.7fr 1fr;
+        grid-gap: 10px;
+        justify-content: center;
+        height:auto;
+        margin: 0px;
+        width: 100%;
+      }
 }

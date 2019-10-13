@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
 *{
     margin:0;
     padding:0;
@@ -11,8 +14,16 @@ h1,h2,h3,h4,h5,h6{
 
 a,li{
     text-decoration: none;
+    color:black;
 }
 
 body{
     margin:10px 50px;
 }
+
+@media screen and (max-width:900px){
+    body{
+        margin:10px 10px;
+    }
+}
+`;

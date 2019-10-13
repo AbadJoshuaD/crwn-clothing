@@ -21,7 +21,14 @@
     color: black;
     border: 1px solid black;
   }
-
+  
+  &.sign-in, &.sign-up{
+    @media screen and (max-width: 900px) {
+      display: flex;
+      justify-content: center;
+      width: 85vw;
+      }
+  }
   &.google-sign-in {
     background-color: #4285f4;
     color: white;
@@ -30,6 +37,11 @@
       background-color: #357ae8;
       border: none;
     }
+    @media screen and (max-width: 900px) {
+      display: flex;
+      justify-content: center;
+      width: 85vw;
+      }
   }
 
   &.inverted {

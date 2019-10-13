@@ -63,6 +63,7 @@ const SignIn = ({emailSignInStart,googleSignInStart}) => {
               type='button'
               onClick={googleSignInStart}
               isGoogleSignIn
+              isSignIn
             >
               Sign in with Google
             </CustomButton>
